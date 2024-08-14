@@ -1,0 +1,23 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dispositivo gia' configurato"
+        },
+        "error": {
+            "invalid_api_key": "Chiave API non valida",
+            "unauthorized": "Assicurati che la tua chiave API sia valida",
+            "whisper_model_not_found":  "Modello Whisper non trovato"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "name": "Nome",
+                    "api_key": "Chiave API",
+                    "model": "Modello",
+                    "prompt": "Prompt",
+                    "temperature": "Temperatura"
+                }
+            }
+        }
+    }
+}

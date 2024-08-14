@@ -1,0 +1,23 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Device is already configured"
+        },
+        "error": {
+            "invalid_api_key": "Invalid API Key",
+            "unauthorized": "API key doesn't have the rights to use Whisper model",
+            "whisper_model_not_found":  "Whisper model not found"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "name": "Name",
+                    "api_key": "API key",
+                    "model": "Model",
+                    "prompt": "Prompt",
+                    "temperature": "Temperature"
+                }
+            }
+        }
+    }
+}
