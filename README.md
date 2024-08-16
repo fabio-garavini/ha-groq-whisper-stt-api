@@ -43,7 +43,9 @@ These are the parameters that you can configure:
 - `api_key`: (Required) GroqCloud api key
 - `model`: (Required) At the moment the only model available is `whisper-large-v3`
 - `temperature`: (Optional) Sampling temperature between 0 and 1. Default `0`
-- `prompt`: (Optional) Used to guide the model's style. Default `""`
+- `prompt`: (Optional) Can be used to **improve speech recognition** of words or even names. Default `""`
+  <br>You have to provide a list of words or names separated by a comma `, `
+  <br>Example: `"open, close, Chat GPT-3, DALL·E"`.
 
 Now you can set it up through your Home Assistant Dashboard (YAML configuration not supported).
 

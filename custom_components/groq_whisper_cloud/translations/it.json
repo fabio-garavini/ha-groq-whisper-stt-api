@@ -1,7 +1,9 @@
 {
     "config": {
         "abort": {
-            "already_configured": "Dispositivo gia' configurato"
+            "already_configured": "Dispositivo gia' configurato",
+            "reconfigure_successful": "Dispositivo riconfigurato",
+            "reconfigure_failed": "Riconfigurazione fallita"
         },
         "error": {
             "invalid_api_key": "Chiave API non valida",
@@ -14,8 +16,23 @@
                     "name": "Nome",
                     "api_key": "Chiave API",
                     "model": "Modello",
-                    "prompt": "Prompt",
-                    "temperature": "Temperatura"
+                    "temperature": "Temperatura",
+                    "prompt": "Prompt"
+                },
+                "data_description": {
+                    "prompt": "Prompt puo' essere utilizzato per migliorare il riconoscimento di alcune parole o di nomi.\nFornisci una lista di parole o nomi separate da una virgola \", \".\nEsempio: \"accendi, spegni, Chat GPT-3, DALL·E\""
+                }
+            },
+            "reconfigure": {
+                "data": {
+                    "name": "Nome",
+                    "api_key": "Chiave API",
+                    "model": "Modello",
+                    "temperature": "Temperatura",
+                    "prompt": "Prompt"
+                },
+                "data_description": {
+                    "prompt": "Prompt puo' essere utilizzato per migliorare il riconoscimento di alcune parole o di nomi.\nFornisci una lista di parole o nomi separate da una virgola \", \".\nEsempio: \"accendi, spegni, Chat GPT-3, DALL·E\""
                 }
             }
         }
