@@ -5,7 +5,6 @@ from __future__ import annotations
 import asyncio
 from collections.abc import AsyncIterable
 import io
-import logging
 import wave
 
 import requests
@@ -25,9 +24,8 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
+from . import _LOGGER
 from .const import SUPPORTED_LANGUAGES
-
-_LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup_entry(
@@ -104,6 +102,9 @@ class GroqWhisperCloudEntity(SpeechToTextEntity):
         data = b""
         async for chunk in stream:
             data += chunk
+            if len(data) / (1024 * 1024) > 24.5:
+                _LOGGER.error("Audio stream size exceed the maximum allowed by OpenAI which is 25Mb")
+                return SpeechResult("", SpeechResultState.ERROR)
 
         if not data:
             _LOGGER.error("No audio data received")
@@ -120,7 +121,7 @@ class GroqWhisperCloudEntity(SpeechToTextEntity):
             # Ensure the buffer is at the start before passing it
             temp_file.seek(0)
 
-            _LOGGER.debug("Temp wav audio file created")
+            _LOGGER.debug("Temp wav audio file created of %.2f Mb", temp_file.getbuffer().nbytes / (1024 * 1024))
 
             # Prepare the files parameter with a proper filename
             files = {
@@ -144,7 +145,7 @@ class GroqWhisperCloudEntity(SpeechToTextEntity):
                     "Authorization": f"Bearer {self.api_key}",
                 },
                 files=files,
-                data=data,
+                data=data
             )
 
             _LOGGER.debug("Transcription request took %f s and returned %d - %s", response.elapsed.seconds, response.status_code, response.reason)
