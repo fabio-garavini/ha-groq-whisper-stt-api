@@ -55,6 +55,8 @@ class GroqWhisperCloudEntity(SpeechToTextEntity):
     @property
     def supported_languages(self) -> list[str]:
         """Return a list of supported languages."""
+        if self.model == "distil-whisper-large-v3-en":
+            return ["en"]
         return SUPPORTED_LANGUAGES
 
     @property
