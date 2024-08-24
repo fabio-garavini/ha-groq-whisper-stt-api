@@ -6,6 +6,7 @@ CONF_PROMPT = "prompt"
 CONF_TEMPERATURE = "temperature"
 
 SUPPORTED_MODELS = [
+    "distil-whisper-large-v3-en",
     "whisper-large-v3"
 ]
 
