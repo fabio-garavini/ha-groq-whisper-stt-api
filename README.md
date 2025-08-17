@@ -1,3 +1,7 @@
+# 🚧 Merged into [ha-openai-whisper-stt-api](https://github.com/fabio-garavini/ha-openai-whisper-stt-api) 🚧
+
+This repository is no longer maintained and is now part of the [ha-openai-whisper-stt-api](https://github.com/fabio-garavini/ha-openai-whisper-stt-api) custom integration
+
 # GroqCloud Whisper STT API integration for Home Assistant 🏠🎙️
 
 This is a custom integration for using GroqCloud speech-to-text API in the Assist pipeline, reducing the workload on the Home Assistant server.
